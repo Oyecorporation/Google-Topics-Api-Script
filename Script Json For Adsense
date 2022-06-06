@@ -1,0 +1,28 @@
+Copy And Paste Script To </head>
+
+<script>
+// Get the array of top topics for this user.
+
+const topics = await document.browsingTopics();
+
+// Request an ad creative.
+
+const response = await fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-Change id adsense here', {
+
+  method: 'POST',
+
+  headers: {
+
+    'Content-Type': 'application/json',
+
+  },
+
+  body: JSON.stringify(topics)
+
+})
+
+// Get the JSON from the response.
+
+const creative = await response.json();
+
+// Display ad.</script>
